@@ -1,0 +1,67 @@
+﻿<page:AnimatedBasePage
+    x:Class="Mitter.NewFollowing"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    toolkit:TiltEffect.IsTiltEnabled="True"    
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True"    
+    d:DataContext="{d:DesignData SampleData/FollowingSampleData.xaml}">
+
+    <phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Key="FriendsItemTemplate">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Grid.Column="0" Margin="10" Width="70" Height="70" HorizontalAlignment="Center" VerticalAlignment="Center" Source="{Binding ProfileImageUrl}"></Image>
+                <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+                    <TextBlock Style="{StaticResource PhoneTextTitle2Style}" Text="{Binding DisplayName}"></TextBlock>
+                    <TextBlock Style="{StaticResource PhoneTextTitle3Style}" Text="{Binding ScreenName}"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+
+    </phone:PhoneApplicationPage.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>            
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,5,0,15">
+            <TextBlock x:Name="Following" Text="following" Margin="9,0,0,10" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <toolkit:PhoneTextBox Grid.Row="1" x:Name="txtFilter" Hint="filter" ActionIcon="/Images/search.png" KeyDown="txtTweets_KeyDown" ActionIconTapped="txtTweets_ActionIconTapped" />
+
+        <TextBlock Margin="20" Text="User is not following anyone" Visibility="Collapsed" x:Name="txtNoUser" Grid.Row="2" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" FontSize="26"></TextBlock>
+
+        <ListBox Visibility="Collapsed"                                 
+                                x:Name="LongFriends"                                   
+                                Grid.Row="2" ItemsSource="{Binding}" 
+                                ItemTemplate="{StaticResource FriendsItemTemplate}" 
+                                Tap="lstFriends_Tap">
+        </ListBox>
+
+
+    </Grid>
+
+</page:AnimatedBasePage>

@@ -1,0 +1,56 @@
+﻿<page:AnimatedBasePage
+    x:Class="Mitter.UI.Settings.Settings_Streaming"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+            <Canvas Background="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                <Image Height="100" Width="100" Source="/images/settings/gps.png"></Image>
+            </Canvas>
+            <TextBlock x:Name="PageTitle" Text="streaming" Margin="20,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+
+        <!--ContentPanel - place additional content here-->
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock FontSize="22" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" Text="Mehdoh can stream new tweets from Twitter as they are published."></TextBlock>
+                <toolkit:ToggleSwitch x:Name="toggleStreamingEnabled" Margin="0,5,0,0" Header="streaming enabled" Checked="toggleStreamingEnabled_Checked" Unchecked="toggleStreamingEnabled_Checked"></toolkit:ToggleSwitch>
+                <StackPanel x:Name="stackOptions">
+                    <TextBlock FontSize="22" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" Text="By default, streaming is only enabled via Wifi, would you like to enable it via mobile data too?"></TextBlock>
+                    <toolkit:ToggleSwitch x:Name="toggleEnabledOnMobile" Margin="0,5,0,0" Header="Mobile data enabled" Checked="toggleEnabledOnMobile_Checked" Unchecked="toggleEnabledOnMobile_Checked"></toolkit:ToggleSwitch>
+                    <TextBlock FontSize="22" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" Text="Do you want the list to automatically scroll to the top as new tweets appear?"></TextBlock>
+                    <toolkit:ToggleSwitch x:Name="toggleAutoScrollEnabled" Margin="0,5,0,0" Header="auto scroll" Checked="toggleAutoScrollEnabled_Checked" Unchecked="toggleAutoScrollEnabled_Checked"></toolkit:ToggleSwitch>
+                    <TextBlock FontSize="22" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" Text="Would you like Mehdoh to keep the screen on while streaming?"></TextBlock>
+                    <toolkit:ToggleSwitch x:Name="toggleKeepScreenOn" Margin="0,5,0,0" Header="keep screen on" Checked="toggleKeepScreenOn_Checked" Unchecked="toggleKeepScreenOn_Checked"></toolkit:ToggleSwitch>
+                    <TextBlock FontSize="22" Style="{StaticResource PhoneTextSubtleStyle}" TextWrapping="Wrap" Text="Do you want any special notifications when you're mentioned or receive a direct message?"></TextBlock>
+                    <toolkit:ToggleSwitch x:Name="toggleVibrate" Margin="0,5,0,0" Header="vibrate" Checked="toggleVibrate_Checked" Unchecked="toggleVibrate_Checked"></toolkit:ToggleSwitch>
+                    <toolkit:ToggleSwitch x:Name="toggleSound" Margin="0,0,0,0" Header="sound" Checked="toggleSound_Checked" Unchecked="toggleSound_Checked"></toolkit:ToggleSwitch>
+                    <TextBlock FontSize="22" Margin="10" Foreground="{StaticResource PhoneAccentBrush}"  TextWrapping="Wrap" Text="Please note that you may notice your battery being depleted faster if you enable streaming."></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+
+</page:AnimatedBasePage>

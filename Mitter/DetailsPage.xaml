@@ -1,0 +1,245 @@
+﻿<page:AnimatedBasePage
+    x:Class="Mitter.DetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:delay="clr-namespace:Delay;assembly=PhonePerformance"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    xmlns:convertors="clr-namespace:FieldOfTweets.Common.UI.Convertors;assembly=FieldOfTweets.Common.UI"
+    xmlns:resources1="clr-namespace:FieldOfTweets.Common.UI.Resources;assembly=FieldOfTweets.Common.UI"
+    d:DataContext="{d:DesignData SampleData/DetailsPageViewModelSampleData.xaml}"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696" 
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    Orientation="Portrait" 
+    shell:SystemTray.IsVisible="True"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+  <phone:PhoneApplicationPage.Resources>
+
+    <resources1:FontResources x:Key="FontResources" />
+    <convertors:LocalImageConverter x:Key="LocalImageConverter"/>
+
+    <resources1:LocalisedStrings x:Key="LocalisedStrings"/>
+
+    <Style x:Key="HyperlinkButtonWithNoIndent" TargetType="HyperlinkButton">
+      <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}"/>
+      <Setter Property="Background" Value="Transparent"/>
+      <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}"/>
+      <Setter Property="Padding" Value="0"/>
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="HyperlinkButton">
+            <Border Background="Transparent">
+              <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                  <VisualState x:Name="Normal"/>
+                  <VisualState x:Name="MouseOver"/>
+                  <VisualState x:Name="Pressed">
+                    <Storyboard>
+                      <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="TextElement"/>
+                    </Storyboard>
+                  </VisualState>
+                  <VisualState x:Name="Disabled">
+                    <Storyboard>
+                      <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Foreground" Storyboard.TargetName="TextElement">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PhoneDisabledBrush}"/>
+                      </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                  </VisualState>
+                </VisualStateGroup>
+              </VisualStateManager.VisualStateGroups>
+              <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                <TextBlock x:Name="TextElement" Text="{TemplateBinding Content}" FontWeight="Bold" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+              </Border>
+            </Border>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style TargetType="RichTextBox">
+      <Setter Property="FontFamily" Value="Segoe WP"></Setter>
+      <Setter Property="FontWeight" Value="Light"></Setter>
+      <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+      <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+      <Setter Property="VerticalContentAlignment" Value="Top" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Margin" Value="0" />
+    </Style>
+
+  </phone:PhoneApplicationPage.Resources>
+
+  <!--Data context is set to sample data above and first item in sample data collection below and LayoutRoot contains the root grid where all other page content is placed-->
+  <Grid x:Name="LayoutRoot" Background="Transparent" d:DataContext="{Binding}">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+
+    <Grid x:Name="gridDetails" Grid.Row="0">
+
+      <Grid.RenderTransform>
+        <TranslateTransform X="0"></TranslateTransform>
+      </Grid.RenderTransform>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"/>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+      </Grid.RowDefinitions>
+
+      <Grid x:Name="GridHeader" Grid.Row="0" Canvas.ZIndex="1">
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto"/>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="0" BorderBrush="{StaticResource PhoneForegroundBrush}" BorderThickness="3" CornerRadius="2" Margin="26,10,10,10">
+          <Image  Width="90" Height="90" Source="{Binding ImageSource, Converter={StaticResource LocalImageConverter}}" x:Name="imageProfile1" MouseLeftButtonUp="imageProfile1_MouseLeftButtonUp" VerticalAlignment="Top">
+          </Image>
+        </Border>
+
+        <Grid x:Name="grid" Grid.Row="0" Grid.Column="1" Margin="10,0,0,0">
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+          </Grid.ColumnDefinitions>
+
+          <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="36" Text="{Binding DisplayName}" Foreground="{StaticResource PhoneForegroundBrush}"  MouseLeftButtonUp="imageProfile1_MouseLeftButtonUp" Style="{StaticResource MehdohTextStyle}"></TextBlock>
+          <TextBlock Grid.Row="1" Grid.Column="0" FontSize="26" Text="{Binding ScreenNameFormatted}" Foreground="{StaticResource PhoneForegroundBrush}" MouseLeftButtonUp="imageProfile1_MouseLeftButtonUp" Style="{StaticResource MehdohTextStyle}" FontWeight="Normal"></TextBlock>
+
+          <Viewbox Visibility="{Binding VerifiedVisibility}" Grid.Row="1" Grid.Column="1" >
+            <Path Data="M61.135077,6.5795158C61.573829,6.578942,63.276885,6.6969552,62.445632,8.6219065L31.403888,33.168905C31.403888,33.168905,30.143808,34.898689,27.47374,33.329044L15.363089,18.381044C15.363089,18.381044,14.412963,12.721535,20.553315,13.501231L29.833855,24.519991 61.035522,6.5820998C61.035522,6.5821002,61.072398,6.579598,61.135077,6.5795158z M3.6503973,0L43.144696,0C45.154916,-4.7683716E-07,46.785092,1.6301641,46.785092,3.6503685L46.785092,9.150924 40.944457,12.511263 40.944457,5.8505899 5.8506374,5.8505899 5.8506374,40.934134 40.944457,40.934134 40.944457,31.843216 46.785092,27.22275 46.785092,43.134356C46.785092,45.154562,45.154916,46.784727,43.144696,46.784727L3.6503973,46.784727C1.6401787,46.784727,0,45.154562,0,43.134356L0,3.6503685C0,1.6301641,1.6401787,-4.7683716E-07,3.6503973,0z"  
+                          Stretch="Uniform" Fill="{StaticResource PhoneAccentBrush}" Width="30" Height="30" Margin="0" />
+          </Viewbox>
+
+        </Grid>
+
+      </Grid>
+
+      <controls:Pivot Grid.Row="1" x:Name="pivotMain" SelectionChanged="pivotMain_SelectionChanged" >
+        <controls:Pivot.HeaderTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding}" FontSize="48"></TextBlock>
+          </DataTemplate>
+        </controls:Pivot.HeaderTemplate>
+        <controls:PivotItem Header="tweet" x:Name="pivotNewTweet">
+
+          <ScrollViewer>
+            <Grid Margin="10,10,10,10">
+
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+              </Grid.RowDefinitions>
+
+              <RichTextBox Grid.Row="0" TextAlignment="Left" Padding="0" x:Name="wrapText" HorizontalAlignment="Left" Margin="-10,0,0,0" TextWrapping="Wrap" DoubleTap="wrapText_DoubleTap" RenderTransformOrigin="0.5,0.5">
+                <Paragraph TextAlignment="Left">
+                </Paragraph>
+                <RichTextBox.RenderTransform>
+                  <CompositeTransform/>
+                </RichTextBox.RenderTransform>
+              </RichTextBox>
+
+              <TextBlock Grid.Row="1" Text="{Binding CreatedAtDisplay}" Style="{StaticResource PhoneTextTitle3Style}" Margin="0,20,0,0" FontFamily="Segoe WP" FontWeight="Light" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}"  />
+              <TextBlock Grid.Row="2" x:Name="txtLocationFull" Text="{Binding LocationFull}" Style="{StaticResource PhoneTextTitle3Style}" FontFamily="Segoe WP" FontWeight="Light" Margin="0,10,0,0" TextWrapping="Wrap" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}"  />
+
+              <TextBlock Grid.Row="3" Text="{Binding ClientVia}" Foreground="{StaticResource PhoneSubtleBrush}" Margin="0,10,0,0" FontFamily="Segoe WP" FontWeight="Light" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}"  />
+
+              <StackPanel Grid.Row="4" Orientation="Horizontal" Visibility="{Binding RetweetVisibility}" Margin="0,10,0,0">
+                <TextBlock FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" Foreground="{StaticResource PhoneSubtleBrush}" Text="retweeted by " FontFamily="Segoe WP" FontWeight="Light" TextWrapping="NoWrap" Margin="0" TextAlignment="Left" VerticalAlignment="Bottom" HorizontalAlignment="Left" MouseLeftButtonUp="retweetedUser_MouseLeftButtonUp" />
+                <TextBlock FontWeight="Bold" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" Foreground="{StaticResource PhoneAccentBrush}" Text="{Binding RetweetScreenNameFormatted}"  TextWrapping="NoWrap" Margin="0" TextAlignment="Left" VerticalAlignment="Bottom" HorizontalAlignment="Left" MouseLeftButtonUp="retweetedUser_MouseLeftButtonUp" />
+              </StackPanel>
+
+              <StackPanel x:Name="repliesPanel" Grid.Row="5" Margin="0,12,0,20"></StackPanel>
+
+            </Grid>
+          </ScrollViewer>
+        </controls:PivotItem>
+
+        <controls:PivotItem Header="conversation" x:Name="pivotConversation">
+
+          <ListBox x:Name="lstTimeline" Margin="0" ItemsSource="{Binding}" SelectionChanged="lstTimeline_SelectionChanged">
+            <ListBox.ItemTemplate>
+              <DataTemplate>
+                <Grid Margin="8,-5,0,15">
+                  <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                  </Grid.ColumnDefinitions>
+
+                  <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                  </Grid.RowDefinitions>
+
+                  <Image delay:LowProfileImageLoader.UriSource="{Binding ImageUrl}" 
+                                           Grid.Column="0" 
+                                           Grid.Row="0" 
+                                           Grid.RowSpan="2" 
+                                           Height="70" 
+                                           Width="70" 
+                                           VerticalAlignment="Top" 
+                                           Margin="0,7,15,0" 
+                                           Tag="{Binding Author}" 
+                                           toolkit:SlideInEffect.LineIndex="2">
+                  </Image>
+
+                  <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"  toolkit:SlideInEffect.LineIndex="1">
+                    <TextBlock Style="{StaticResource MehdohAccentTextStyle}" Text="{Binding ScreenNameDisplay}" TextWrapping="NoWrap" Margin="0" TextAlignment="Left" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" />
+                    <TextBlock Style="{StaticResource MehdohSubtleTextStyle}" Text="{Binding DisplayName}" TextWrapping="NoWrap" Margin="5,0,0,0" TextAlignment="Left" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" />
+                  </StackPanel>
+
+                  <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource MehdohTextStyle}" Foreground="{StaticResource PhoneAccentBrush}"  TextAlignment="Right" Text="{Binding CreatedAt}" TextWrapping="NoWrap" Margin="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" toolkit:SlideInEffect.LineIndex="1" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}"/>
+
+                  <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource MehdohTextStyle}" Grid.ColumnSpan="2" Text="{Binding Description}" TextWrapping="Wrap" Margin="0,0,0,0" Width="auto" TextAlignment="Left" VerticalAlignment="Top" toolkit:SlideInEffect.LineIndex="2" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" />
+
+                </Grid>
+              </DataTemplate>
+            </ListBox.ItemTemplate>
+
+          </ListBox>
+
+        </controls:PivotItem>
+
+      </controls:Pivot>
+
+    </Grid>
+
+  </Grid>
+
+
+  <!--Sample code showing usage of ApplicationBar-->
+  <phone:PhoneApplicationPage.ApplicationBar>
+    <shell:ApplicationBar Opacity="1.0" IsVisible="True" IsMenuEnabled="True">
+      <shell:ApplicationBarIconButton IconUri="/Images/76x76/dark/appbar.reply.email.png" Text="reply" x:Name="mnuReply" Click="mnuReply_Click"/>
+    </shell:ApplicationBar>
+  </phone:PhoneApplicationPage.ApplicationBar>
+
+
+</page:AnimatedBasePage>

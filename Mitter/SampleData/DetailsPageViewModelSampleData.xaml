@@ -1,0 +1,14 @@
+﻿<viewModels:DetailsPageViewModel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:Mitter"
+    xmlns:viewModels="clr-namespace:FieldOfTweets.Common.UI.ViewModels;assembly=FieldOfTweets.Common.UI"
+    ClientVia="via Twitter"
+    VerifiedVisibility="Visible"
+    CreatedAtDisplay="12/7/2011 22:58"
+    Description="City Centre athletics coming to Lichfield: With the Olympics just over a year away, Lichfield residents will get.."
+    DisplayName="Chris Field"
+    ScreenNameFormatted="@mrcfield"
+    LocationFull="Lichfield England">
+
+</viewModels:DetailsPageViewModel>

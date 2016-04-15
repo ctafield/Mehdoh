@@ -1,0 +1,88 @@
+﻿<page:AnimatedBasePage
+    x:Class="Mitter.UI.Settings.Settings_Rate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.Resources>
+
+        <DataTemplate x:Key="rateLimitTemplate">            
+            
+            <Grid>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource PhoneTextTitle2Style}" Text="{Binding ItemTitle}" Margin="0"></TextBlock>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" FontWeight="Bold" Text="Limit:"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Limit}"></TextBlock>
+
+                <TextBlock Grid.Row="2" Grid.Column="0" FontWeight="Bold" Text="Remaining:"></TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Remaining}"></TextBlock>
+
+                <TextBlock Grid.Row="3" Grid.Column="0" FontWeight="Bold" Text="Resets In:"></TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding TimeToReset}"></TextBlock>
+                               
+            </Grid>            
+        </DataTemplate>
+        
+    </phone:PhoneApplicationPage.Resources>
+    
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+            <Canvas Background="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                <Image Height="100" Width="100" Source="/images/settings/User-Time.png"></Image>
+            </Canvas>
+            <TextBlock x:Name="PageTitle" Text="rate limits" Margin="20,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        
+        <TextBlock Grid.Row="1" Margin="20,0,0,0" Foreground="{StaticResource PhoneSubtleBrush}" Text="The rate limits imposed by Twitter are as follows. NB: If you are often hitting rate limits then consider enabling streaming." TextWrapping="Wrap"></TextBlock>
+        
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="2" Margin="0">
+              
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border BorderThickness="0,5,0,0" Margin="0,20,0,0" BorderBrush="{StaticResource PhoneAccentBrush}">
+                <TextBlock Margin="20" x:Name="txtNoTwitter"  Text="there are no twitter accounts linked to mehdoh. only twitter accounts are rate limited (by twitter!)." Style="{StaticResource PhoneTextSubtleStyle}" FontSize="26" TextWrapping="Wrap"></TextBlock>
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</page:AnimatedBasePage>

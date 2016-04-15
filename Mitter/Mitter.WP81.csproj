@@ -1,0 +1,925 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D6CA1491-2BCB-4011-93A9-8BAFE534796C}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mitter</RootNamespace>
+    <AssemblyName>Mitter</AssemblyName>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <SilverlightVersion>
+    </SilverlightVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en-US</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Mitter.WP81_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Mitter.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+    <NuGetPackageImportStamp>a8f36194</NuGetPackageImportStamp>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <DefaultLanguage>en-us</DefaultLanguage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8;WP81</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release.WP8\</OutputPath>
+    <DefineConstants>SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release +Logging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Release +Logging\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Pro Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;MEHDOH_PRO</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Pro Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;MEHDOH_PRO</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release +Logging|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Release +Logging\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Pro Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;MEHDOH_PRO</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Pro Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;MEHDOH_PRO</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>
+    </PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release +Logging|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Release +Logging\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Pro Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SILVERLIGHT;WINDOWS_PHONE;MEHDOH_PRO</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Pro Release|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Pro Release\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;MEHDOH_PRO</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mehdoh Free Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Mehdoh Free Release\</OutputPath>
+    <DefineConstants>SILVERLIGHT;WINDOWS_PHONE;MEHDOH_FREE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mehdoh Free Release|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Mehdoh Free Release\</OutputPath>
+    <DefineConstants>SILVERLIGHT;WINDOWS_PHONE;MEHDOH_FREE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Mehdoh Free Release|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Mehdoh Free Release\</OutputPath>
+    <DefineConstants>SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BitMiracle.LibJpeg.Silverlight">
+      <HintPath>..\Libraries\BitMiracle.LibJpeg.Silverlight.dll</HintPath>
+    </Reference>
+    <Reference Include="Coding4Fun.Toolkit.Controls, Version=2.0.7.0, Culture=neutral, PublicKeyToken=c5fd7b72b1a17ce4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="CrittercismSDK">
+      <HintPath>..\packages\Crittercism.2.2.0\lib\windowsphone8\CrittercismSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib.WindowsPhone, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\ICSharpCode.SharpZipLib.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="Lumia.Imaging.Managed">
+      <HintPath>..\packages\LumiaImagingSDK.2.0.208\lib\wp8\Lumia.Imaging.Managed.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Maps, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=8.0.1.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Phone, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\wp8\Microsoft.Threading.Tasks.Extensions.Phone.dll</HintPath>
+    </Reference>
+    <Reference Include="MyToolkit, Version=2.3.28.0, Culture=neutral, PublicKeyToken=3e349a1360994d26, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MyToolkit.2.3.28.0\lib\portable-net45+wp8+win8+wpa81\MyToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="MyToolkit.Extended, Version=2.3.28.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MyToolkit.Extended.2.3.28.0\lib\wp80\MyToolkit.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PivotPageIndicator">
+      <HintPath>..\Libraries\PivotPageIndicatorDLL\PivotPageIndicator.dll</HintPath>
+    </Reference>
+    <Reference Include="PocketWP, Version=1.0.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PocketWP.1.0.0.10\lib\wp80\PocketWP.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\wp8\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2015.1.511.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\c_f8_000\AppData\Roaming\Telerik\Updates\04766Telerik_UI_for_WindowsPhone8_2015_1_0511_DEV_hotfix_LIB\Binaries\WindowsPhone\Telerik.Windows.Controls.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2015.1.511.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\c_f8_000\AppData\Roaming\Telerik\Updates\04766Telerik_UI_for_WindowsPhone8_2015_1_0511_DEV_hotfix_LIB\Binaries\WindowsPhone\Telerik.Windows.Controls.Input.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Primitives, Version=2015.1.511.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\c_f8_000\AppData\Roaming\Telerik\Updates\04766Telerik_UI_for_WindowsPhone8_2015_1_0511_DEV_hotfix_LIB\Binaries\WindowsPhone\Telerik.Windows.Controls.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Core, Version=2015.1.511.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\c_f8_000\AppData\Roaming\Telerik\Updates\04766Telerik_UI_for_WindowsPhone8_2015_1_0511_DEV_hotfix_LIB\Binaries\WindowsPhone\Telerik.Windows.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2015.1.511.3040, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\c_f8_000\AppData\Roaming\Telerik\Updates\04766Telerik_UI_for_WindowsPhone8_2015_1_0511_DEV_hotfix_LIB\Binaries\WindowsPhone\Telerik.Windows.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ListState.cs" />
+    <Compile Include="Classes\SearchState.cs" />
+    <Compile Include="Classes\UriMapper.cs" />
+    <Compile Include="Classes\Utilities.cs" />
+    <Compile Include="Convertors\ImageThumbnailConvertor.cs" />
+    <Compile Include="Helpers\BackfillHelper.cs" />
+    <Compile Include="Helpers\StringToUpperConverter.cs" />
+    <Compile Include="NewFollowers.xaml.cs">
+      <DependentUpon>NewFollowers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewFollowing.xaml.cs">
+      <DependentUpon>NewFollowing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrendLocation.xaml.cs">
+      <DependentUpon>TrendLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CloudohTile.xaml.cs">
+      <DependentUpon>CloudohTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CloudohTileSmall.xaml.cs">
+      <DependentUpon>CloudohTileSmall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FilterSelect.xaml.cs">
+      <DependentUpon>FilterSelect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ImageHelpTip.xaml.cs">
+      <DependentUpon>ImageHelpTip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PanScanImage.xaml.cs">
+      <DependentUpon>PanScanImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReplyView.xaml.cs">
+      <DependentUpon>ReplyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddAccount.xaml.cs">
+      <DependentUpon>AddAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectPivot.xaml.cs">
+      <DependentUpon>SelectPivot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserBanner.xaml.cs">
+      <DependentUpon>UserBanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AccountManagement.xaml.cs">
+      <DependentUpon>AccountManagement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animations\FoldDownAnimation.cs" />
+    <Compile Include="Animations\LinqToVisualTree.cs" />
+    <Compile Include="Animations\Behaviors\AddListItem.cs" />
+    <Compile Include="Animations\PeelAnimation.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Convertors\ThumbnailCacheConvertor.cs" />
+    <Compile Include="Customise.xaml.cs">
+      <DependentUpon>Customise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomiseItems.xaml.cs">
+      <DependentUpon>CustomiseItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTemplateSelector\DataTemplateSelector.cs" />
+    <Compile Include="DataTemplateSelector\TimelineDataTemplateSelector.cs" />
+    <Compile Include="DetailsPage.xaml.cs">
+      <DependentUpon>DetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FollowSuggestions.xaml.cs">
+      <DependentUpon>FollowSuggestions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FollowSuggestionsUsers.xaml.cs">
+      <DependentUpon>FollowSuggestionsUsers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\DetailsViewHelper.cs" />
+    <Compile Include="ListMembership.xaml.cs">
+      <DependentUpon>ListMembership.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewTweet.xaml.cs">
+      <DependentUpon>NewTweet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShowList.xaml.cs">
+      <DependentUpon>ShowList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TwitterOAuth.xaml.cs">
+      <DependentUpon>TwitterOAuth.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrivacyPolicy.xaml.cs">
+      <DependentUpon>PrivacyPolicy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RetweetsOfMe.xaml.cs">
+      <DependentUpon>RetweetsOfMe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaveLater.xaml.cs">
+      <DependentUpon>SaveLater.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SaveLaterConfig.xaml.cs">
+      <DependentUpon>SaveLaterConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.xaml.cs">
+      <DependentUpon>SearchResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShellHelperUi.cs" />
+    <Compile Include="Trends.xaml.cs">
+      <DependentUpon>Trends.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReorderListBox.cs" />
+    <Compile Include="UserControls\ReorderListBoxItem.cs" />
+    <Compile Include="UserControls\ResizePopup.xaml.cs">
+      <DependentUpon>ResizePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SpecialCharacters.xaml.cs">
+      <DependentUpon>SpecialCharacters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PostWelcome.xaml.cs">
+      <DependentUpon>PostWelcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserListed.xaml.cs">
+      <DependentUpon>UserListed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserProfile.xaml.cs">
+      <DependentUpon>UserProfile.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AccountManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomiseItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FollowSuggestions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FollowSuggestionsUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListMembership.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewFollowers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewFollowing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewTweet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <DesignData Include="SampleData\UserListedSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </DesignData>
+    <DesignData Include="SampleData\AccountViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <DesignData Include="SampleData\FollowingSampleData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </DesignData>
+    <DesignData Include="SampleData\TimelineViewModelSampleData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </DesignData>
+    <Page Include="ShowList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TrendLocation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TwitterOAuth.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\DetailsPageViewModelSampleData.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </DesignData>
+    <Page Include="PrivacyPolicy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RetweetsOfMe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaveLater.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaveLaterConfig.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchResults.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Trends.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AddAccount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CloudohTile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CloudohTileSmall.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\FilterSelect.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ImageHelpTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PanScanImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReplyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ResizePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SelectPivot.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SpecialCharacters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\UserBanner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Welcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\PostWelcome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserListed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <Content Include="Fonts\BPreplay.otf" />
+    <Content Include="Fonts\FiraSansOT-Regular.otf" />
+    <Content Include="Fonts\ABeeZee-Regular.otf" />
+    <Content Include="Fonts\ClearSans-Regular.ttf" />
+    <Content Include="Fonts\Questrial-Regular.otf" />
+    <Content Include="Fonts\ptsans.ttf" />
+    <Content Include="Fonts\lacuna.ttf" />
+    <Content Include="Fonts\Cicle Fina.ttf" />
+    <Content Include="Fonts\Amble-Regular.ttf" />
+    <None Include="Mitter.WP81_2014_05_08_18_52_13.sap" />
+    <None Include="Mitter.WP8_2014_04_12_08_37_45.sap" />
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\BadgeLogo.png" />
+    <Content Include="Assets\BlankTile.png" />
+    <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\SquareTile150x150.png" />
+    <Content Include="Assets\SquareTile310x150.png" />
+    <Content Include="Assets\SquareTile310x310.png" />
+    <Content Include="Assets\SquareTile44x44.png" />
+    <Content Include="Assets\SquareTile71x71.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\WideLogo.png" />
+    <Content Include="Background-Followers.png" />
+    <Content Include="Background-Following.png" />
+    <Content Include="Background-NewTweet.png" />
+    <Content Include="Background-Search.png" />
+    <Resource Include="BlankTile.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="BlankTileGreen.png" />
+    <Content Include="DefaultLockScreen.jpg" />
+    <Content Include="FodyWeavers.xml" />
+    <Content Include="Icons\add.png" />
+    <Content Include="Icons\appbar.apply.rest.png" />
+    <Content Include="Icons\appbar.cancel.rest.png" />
+    <Content Include="Icons\appbar.save.rest.png" />
+    <Content Include="Icons\remove.png" />
+    <Content Include="Icons\shuffle.png" />
+    <Content Include="Icons\sort.png" />
+    <Content Include="Images\76x76\appbar.add.png" />
+    <Content Include="Images\76x76\appbar.at.png" />
+    <Content Include="Images\76x76\appbar.camera.png" />
+    <Content Include="Images\76x76\appbar.check.png" />
+    <Content Include="Images\76x76\appbar.close.png" />
+    <Content Include="Images\76x76\appbar.control.pause.png" />
+    <Content Include="Images\76x76\appbar.control.play.png" />
+    <Content Include="Images\76x76\appbar.delete.png" />
+    <Content Include="Images\76x76\appbar.edit.png" />
+    <Content Include="Images\76x76\appbar.email.png" />
+    <Content Include="Images\76x76\appbar.graph.line.up.png" />
+    <Content Include="Images\76x76\appbar.list.png" />
+    <Content Include="Images\76x76\appbar.location.add.png" />
+    <Content Include="Images\76x76\appbar.magnify.png" />
+    <Content Include="Images\76x76\appbar.message.send.png" />
+    <Content Include="Images\76x76\appbar.minus.png" />
+    <Content Include="Images\76x76\appbar.refresh.png" />
+    <Content Include="Images\76x76\appbar.repeat.png" />
+    <Content Include="Images\76x76\appbar.reply.email.png" />
+    <Content Include="Images\76x76\appbar.save.png" />
+    <Content Include="Images\76x76\appbar.share.png" />
+    <Content Include="Images\76x76\appbar.star.add.png" />
+    <Content Include="Images\76x76\appbar.star.minus.png" />
+    <Content Include="Images\76x76\appbar.twitter.bird.png" />
+    <Content Include="Images\76x76\appbar.user.png" />
+    <Content Include="Images\76x76\dark\appbar.add.png" />
+    <Content Include="Images\76x76\dark\appbar.at.png" />
+    <Content Include="Images\76x76\dark\appbar.camera.png" />
+    <Content Include="Images\76x76\dark\appbar.check.png" />
+    <Content Include="Images\76x76\dark\appbar.close.png" />
+    <Content Include="Images\76x76\dark\appbar.control.pause.png" />
+    <Content Include="Images\76x76\dark\appbar.control.play.png" />
+    <Content Include="Images\76x76\dark\appbar.delete.png" />
+    <Content Include="Images\76x76\dark\appbar.edit.png" />
+    <Content Include="Images\76x76\dark\appbar.email.png" />
+    <Content Include="Images\76x76\dark\appbar.graph.line.up.png" />
+    <Content Include="Images\76x76\dark\appbar.list.png" />
+    <Content Include="Images\76x76\dark\appbar.location.add.png" />
+    <Content Include="Images\76x76\dark\appbar.magnify.png" />
+    <Content Include="Images\76x76\dark\appbar.message.send.png" />
+    <Content Include="Images\76x76\dark\appbar.minus.png" />
+    <Content Include="Images\76x76\dark\appbar.refresh.png" />
+    <Content Include="Images\76x76\dark\appbar.repeat.png" />
+    <Content Include="Images\76x76\dark\appbar.reply.email.png" />
+    <Content Include="Images\76x76\dark\appbar.save.png" />
+    <Content Include="Images\76x76\dark\appbar.share.png" />
+    <Content Include="Images\76x76\dark\appbar.star.add.png" />
+    <Content Include="Images\76x76\dark\appbar.star.minus.png" />
+    <Content Include="Images\76x76\dark\appbar.twitter.bird.png" />
+    <Content Include="Images\76x76\dark\appbar.user.png" />
+    <Content Include="Images\76x76\light\appbar.add.png" />
+    <Content Include="Images\76x76\light\appbar.at.png" />
+    <Content Include="Images\76x76\light\appbar.camera.png" />
+    <Content Include="Images\76x76\light\appbar.check.png" />
+    <Content Include="Images\76x76\light\appbar.close.png" />
+    <Content Include="Images\76x76\light\appbar.control.pause.png" />
+    <Content Include="Images\76x76\light\appbar.control.play.png" />
+    <Content Include="Images\76x76\light\appbar.delete.png" />
+    <Content Include="Images\76x76\light\appbar.edit.png" />
+    <Content Include="Images\76x76\light\appbar.email.png" />
+    <Content Include="Images\76x76\light\appbar.graph.line.up.png" />
+    <Content Include="Images\76x76\light\appbar.list.png" />
+    <Content Include="Images\76x76\light\appbar.location.add.png" />
+    <Content Include="Images\76x76\light\appbar.magnify.png" />
+    <Content Include="Images\76x76\light\appbar.math.plus.minus.png" />
+    <Content Include="Images\76x76\light\appbar.message.send.png" />
+    <Content Include="Images\76x76\light\appbar.minus.png" />
+    <Content Include="Images\76x76\light\appbar.refresh.png" />
+    <Content Include="Images\76x76\light\appbar.repeat.png" />
+    <Content Include="Images\76x76\light\appbar.reply.email.png" />
+    <Content Include="Images\76x76\light\appbar.save.png" />
+    <Content Include="Images\76x76\light\appbar.share.png" />
+    <Content Include="Images\76x76\light\appbar.star.add.png" />
+    <Content Include="Images\76x76\light\appbar.star.minus.png" />
+    <Content Include="Images\76x76\light\appbar.twitter.bird.png" />
+    <Content Include="Images\76x76\light\appbar.user.png" />
+    <Content Include="Images\76x76\light\overflowdots.png" />
+    <Content Include="Images\add-facebook.png" />
+    <Content Include="Images\add-twitter.png" />
+    <Content Include="Images\appbar.retweet.new.png" />
+    <Content Include="Images\appbar.select.png" />
+    <Content Include="Images\appbar.send.update.png" />
+    <Content Include="Images\attachment.png" />
+    <Content Include="Images\bigplay.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\check.png" />
+    <Content Include="Images\check-dark.png" />
+    <Content Include="Images\check-light.png" />
+    <Content Include="Images\circle.png" />
+    <Content Include="Images\comment.png" />
+    <Content Include="Images\dark\streaming-off.png" />
+    <Content Include="Images\dark\streaming-on.png" />
+    <Content Include="Images\ExpanderArrow.png" />
+    <Content Include="Images\FrameThumbnail.png" />
+    <Content Include="Images\mehdoh-refresh.png" />
+    <Content Include="Images\mehdoh_avatar.png" />
+    <Content Include="Images\oak_pan.jpg" />
+    <Content Include="Images\profile_type_twitter.png" />
+    <Content Include="Images\profile_type_facebook.png" />
+    <Content Include="Images\like-details.png" />
+    <Content Include="Images\comments.png" />
+    <Content Include="Images\like.png" />
+    <Content Include="Images\profile_type_instagram.png" />
+    <Content Include="Images\settings\clear.png" />
+    <Content Include="Images\settings\lock.png" />
+    <Content Include="Images\settings\mutes.png" />
+    <Content Include="Images\settings\Settings.png" />
+    <Content Include="Images\settings\GPS.png" />
+    <Content Include="Images\settings\About.png" />
+    <Content Include="Images\settings\Document.png" />
+    <Content Include="Images\settings\Location.png" />
+    <Content Include="Images\settings\Tile.png" />
+    <Content Include="Images\settings\Play.png" />
+    <Content Include="Images\settings\Background.png" />
+    <Content Include="Images\settings\synchronise.png" />
+    <Content Include="Images\settings\tips.png" />
+    <Content Include="Images\settings\tip-small-dark.png" />
+    <Content Include="Images\settings\tip-small-light.png" />
+    <Content Include="Images\profile_type_soundcloud.png" />
+    <Content Include="Images\settings\User-Time.png" />
+    <Content Include="Images\soundcloud-stream-dark.png" />
+    <Content Include="Images\soundcloud-stream-light.png" />
+    <Content Include="Images\unlike.png" />
+    <Content Include="Images\wentwrong.png" />
+    <None Include="todo.txt" />
+    <Content Include="Images\addmention-dark.png" />
+    <Content Include="Images\addmention-light.png" />
+    <Content Include="Images\appbar.geotag.add.png" />
+    <Content Include="Images\appbar.retweet.png" />
+    <Content Include="Images\img.reply.png" />
+    <Content Include="Images\retweet-dark.png" />
+    <Content Include="Images\retweet-light.png" />
+    <Content Include="LockTile.png" />
+    <Content Include="MediumTile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="README_FIRST.txt" />
+    <Content Include="SmallTile.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\tweet1.wav" />
+    <Content Include="Toolkit.Content\ApplicationBar.Add.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+    <Content Include="trends-current.png" />
+    <Content Include="vcd.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WelcomeBackgroundDark.png" />
+    <Content Include="WelcomeBackgroundLight.png" />
+    <Content Include="Images\Search.png" />
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FieldOfTweets.Agent\FieldOfTweets.Agent.WP8.csproj">
+      <Project>{E97D482F-5F03-4347-AB1A-E3ADBAA05D63}</Project>
+      <Name>FieldOfTweets.Agent.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FieldOfTweets.Common.Api.Responses.Twitter\FieldOfTweets.Common.Api.Responses.Twitter.WP8.csproj">
+      <Project>{3942F76D-5B96-4220-AD07-5D59EC6D4472}</Project>
+      <Name>FieldOfTweets.Common.Api.Responses.Twitter.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FieldOfTweets.Common.UI\FieldOfTweets.Common.UI.WP8.csproj">
+      <Project>{2F8B3B10-9857-4F04-AFB0-6FA43E2D232A}</Project>
+      <Name>FieldOfTweets.Common.UI.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FieldOfTweets.Common\FieldOfTweets.Common.WP81.csproj">
+      <Project>{6b4f7bcc-38e6-4f3a-844c-ee696ff53a36}</Project>
+      <Name>FieldOfTweets.Common.WP81</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\danielcrenna-hammock-84be310\danielcrenna-hammock-84be310\src\net40\Hammock.WindowsPhone\Hammock.WindowsPhone.WP8.csproj">
+      <Project>{3059FD1C-4B4B-4460-A0D4-53C84CCE6CAC}</Project>
+      <Name>Hammock.WindowsPhone.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\PhonePerfImages\PhonePerformance.WP8.csproj">
+      <Project>{FCF263CD-388B-44E4-8A92-A4C5F670394F}</Project>
+      <Name>PhonePerformance.WP8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mitter.UI.MehdohSays\Mitter.UI.MehdohSays.csproj">
+      <Project>{E621E88B-4F2B-460F-89B5-B67B91D00AB2}</Project>
+      <Name>Mitter.UI.MehdohSays</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mitter.UI.Settings\Mitter.UI.Settings.csproj">
+      <Project>{12FD3DAA-D84F-4BBB-95CF-510B8D23FFD4}</Project>
+      <Name>Mitter.UI.Settings</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Help\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\packages\LumiaImagingSDK.2.0.208\build\wp8\LumiaImagingSDK.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\LumiaImagingSDK.2.0.208\build\wp8\LumiaImagingSDK.targets'))" />
+  </Target>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\packages\LumiaImagingSDK.2.0.208\build\wp8\LumiaImagingSDK.targets" Condition="Exists('..\packages\LumiaImagingSDK.2.0.208\build\wp8\LumiaImagingSDK.targets')" />
+</Project>

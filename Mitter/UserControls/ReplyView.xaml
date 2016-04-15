@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="Mitter.UserControls.ReplyView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="480" d:DesignWidth="480">
+
+  <Grid Margin="0,0,0,5">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="15"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"></ColumnDefinition>
+      <ColumnDefinition Width="*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <Grid Grid.Row="0" Grid.ColumnSpan="2">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="25"></ColumnDefinition>
+        <ColumnDefinition Width="Auto"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+
+      <Border VerticalAlignment="Bottom" Height="3" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="3" BorderBrush="{StaticResource PhoneAccentBrush}"></Border>
+      <Polyline Grid.Column="1" StrokeThickness="3" Fill="{StaticResource PhoneAccentBrush}" Points="0,15 15,0 30,15"></Polyline>
+
+    </Grid>
+
+    <Image Grid.Column="0"    
+               Grid.Row="1"
+                Source="{Binding PictureUrl}" Width="80" Height="80" 
+                VerticalAlignment="Top" Margin="0,7,7,12">
+    </Image>
+
+    <Grid Grid.Column="1" Grid.Row="1" ShowGridLines="False">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+        <ColumnDefinition Width="0.5*"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto"></RowDefinition>
+        <RowDefinition Height="Auto"></RowDefinition>
+      </Grid.RowDefinitions>
+
+      <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,5,5,3">
+        <TextBlock Style="{StaticResource MehdohAccentTextStyle}" Text="{Binding UserName}" TextWrapping="NoWrap" Margin="0" TextAlignment="Left" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" />
+        <TextBlock Style="{StaticResource MehdohSubtleTextStyle}" Text="{Binding DisplayName}" TextWrapping="NoWrap" Margin="5,0,0,0" TextAlignment="Left" FontSize="{Binding Source={StaticResource FontResources},Path=FontSizeNormal, Mode=OneTime}" />
+      </StackPanel>
+
+      <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=Time}"
+                       Margin="5,5,0,3"
+                       Style="{StaticResource MehdohAccentTextStyle}"
+                       HorizontalAlignment="Right"/>
+
+      <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" 
+                       Text="{Binding Path=Message}"
+                       Style="{StaticResource MehdohTextStyle}"
+                       TextWrapping="Wrap" Margin="7,0,0,12"/>
+
+    </Grid>
+
+  </Grid>
+</UserControl>

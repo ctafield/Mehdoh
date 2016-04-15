@@ -1,0 +1,12 @@
+﻿<Generic:List x:TypeArguments="ViewModels:AccountViewModel" 
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:Generic="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+              xmlns:ViewModels="clr-namespace:FieldOfTweets.Common.UI.ViewModels;assembly=FieldOfTweets.Common.UI">
+
+    <ViewModels:AccountViewModel ScreenName="@mrcfield" DisplayName="Christopher Field" ProfileType="Twitter" />
+    <ViewModels:AccountViewModel ScreenName="@ctafield" DisplayName="Chris Field" ProfileType="Instagram" />
+    <ViewModels:AccountViewModel ScreenName="@mehdoh" DisplayName="Mehdoh" ProfileType="Twitter" />
+    <ViewModels:AccountViewModel ScreenName="" DisplayName="Christopher Field" ProfileType="Facebook" />
+
+</Generic:List>

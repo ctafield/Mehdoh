@@ -1,0 +1,48 @@
+﻿<objectModel:ObservableCollection               
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"              
+              xmlns:objectModel="clr-namespace:System.Collections.ObjectModel;assembly=System"
+              xmlns:viewModels="clr-namespace:FieldOfTweets.Common.UI.ViewModels;assembly=FieldOfTweets.Common.UI"
+              x:TypeArguments="viewModels:TimelineViewModel">
+    
+    <viewModels:TimelineViewModel
+        Description="City Centre athletics coming to Lichfield: With the Olympics just over a year away, Lichfield residents will get.."
+        DisplayName="Tony Cowards"
+        ScreenName="TonyCowards"
+        IsGap="False"
+        ImageUrl="https://pbs.twimg.com/profile_images/378800000142915221/094710e7b1e070354461faa3b3c1e721_normal.jpeg"
+        CreatedAt="THU MAR 31 14:15:00 0 2014"
+        IsRetweet="False">
+    </viewModels:TimelineViewModel>
+
+    <viewModels:TimelineViewModel
+        Description="City Centre athletics coming to Lichfield: With the Olympics just over a year away, Lichfield residents will get.."
+        DisplayName="Chelsea Peretti"
+        ScreenName="ChelseaVPeretti"
+        IsGap="False"
+        ImageUrl="https://pbs.twimg.com/profile_images/420061856946876416/GBFJ666L_normal.jpeg"
+        CreatedAt="THU MAR 31 14:15:00 0 2014"
+        IsRetweet="False">
+    </viewModels:TimelineViewModel>
+
+    <viewModels:TimelineViewModel
+        Description="City Centre athletics coming to Lichfield: With the Olympics just over a year away, Lichfield residents will get.."
+        DisplayName="Disney"
+        ScreenName="disney"
+        IsGap="False"
+        ImageUrl="https://pbs.twimg.com/profile_images/424003458266456065/6c52t6fR_normal.jpeg"
+        CreatedAt="THU MAR 31 14:15:00 0 2014"
+        IsRetweet="False">
+    </viewModels:TimelineViewModel>
+    
+    <viewModels:TimelineViewModel
+        Description="City Centre athletics coming to Lichfield: With the Olympics just over a year away, Lichfield residents will get.."
+        DisplayName="Chris Field"
+        ScreenName="mrcfield"
+        IsGap="False"
+        ImageUrl="https://pbs.twimg.com/profile_images/1848193664/APLogo_normal.jpg"
+        CreatedAt="THU MAR 31 14:15:00 0 2014"
+        IsRetweet="False">
+    </viewModels:TimelineViewModel>
+    
+</objectModel:ObservableCollection>

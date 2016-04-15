@@ -1,0 +1,37 @@
+Fixes needed
+- bug if timeline images switched off then images don't show on details page - check this
+
+Important TODO 
+- undo retweets
+- Migrate to Pocket API v3 and check integration thoroughly
+
+Nice:
+Auto refresh when tapping in from a toast notification
+Change conversations to only load on demand
+Change Pivot selector to use the correct numbers
+
+TODO - No particular order
+
+4- Add Foursquare Checkins
+6- Facebook Integration
+8- New graphics
+10- Push Notifications for Twitter
+14- Fix problem of @mention in user profile obviously causing issues with email addresses
+
+
+
+done:
+Change tweet links so it views them internally
+Clear image cache
+Clear tweet cache (this might take more work as its slooooooow)
+- change youtube to be the same as vine videos
+- fix rest of start up
+- sort out font sizes to use the system Small / Normal / Large etc.
+- Twitter API rate limit messages
+- fix to allow renaming of twitter accounts (via account management, refresh etc.)
+- refresh for Instagram accounts
+- refresh for Soundcloud accounts
+- trial version different app (mehdoh little)
+- Option to have send via SMS (needs WP8 version of AppBarPicker or Phone whatever its called from Coding4Fun/Scott)
+- twitpic description (think its done, check)
+19- Fix for some youtube videos

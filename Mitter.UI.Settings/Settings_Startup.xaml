@@ -1,0 +1,55 @@
+﻿<page:AnimatedBasePage 
+    x:Class="Mitter.UI.Settings.Settings_Startup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+            <Canvas Background="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                <Image Height="100" Width="100" Source="/images/settings/play.png"></Image>
+            </Canvas>
+            <TextBlock x:Name="PageTitle" Text="start-up" Margin="20,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Style="{StaticResource PhoneTextSubtleStyle}" Text="please note that start up is different to resuming. you will require a manual refresh when the application resumes." TextWrapping="Wrap" Margin="10,0,10,20"></TextBlock>
+            <TextBlock Grid.Row="1" Style="{StaticResource PhoneTextSubtleStyle}" Text="when mehdoh starts refresh the following:" TextWrapping="Wrap" Margin="10,0,10,20"></TextBlock>
+            <ListBox Grid.Row="2" x:Name="lstRefresh" ItemsSource="{Binding}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <toolkit:ToggleSwitch IsEnabled="{Binding IsAllowedToChangeStartup}" Checked="lstRefresh_ToggleChecked" Unchecked="lstRefresh_ToggleChecked" Width="460" IsChecked="{Binding RefreshOnStartup}" Header="{Binding FullDisplayName}"></toolkit:ToggleSwitch>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+
+    </Grid>
+
+</page:AnimatedBasePage >

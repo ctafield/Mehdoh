@@ -1,0 +1,136 @@
+﻿<page:AnimatedBasePage
+    x:Class="Mitter.UI.Settings.SettingsNew"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:userControls="clr-namespace:Mitter.UI.Settings.UserControls"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    xmlns:resources="clr-namespace:FieldOfTweets.Common.UI.Resources;assembly=FieldOfTweets.Common.UI"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False"
+    toolkit:TiltEffect.IsTiltEnabled="True">
+
+    <phone:PhoneApplicationPage.Resources>
+        <resources:LocalisedStrings x:Key="LocalisedStrings"/>
+    </phone:PhoneApplicationPage.Resources>
+    
+        <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <controls:Panorama Title="settings" Grid.Row="0" Grid.Column="0">
+
+            <!--Panorama item one-->
+            <phone:PanoramaItem Orientation="Horizontal">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>                                                
+                    </Grid.ColumnDefinitions>
+
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="0" Text="general" ImageSource="/images/settings/settings.png" Click="general_Click" />
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="1" Text="background" ImageSource="/images/settings/background.png" Click="background_Click" />
+
+                    <userControls:SettingsButton Grid.Row="1" Grid.Column="0" Text="streaming" ImageSource="/images/settings/gps.png" Click="streaming_Click"  />
+                    <userControls:SettingsButton Grid.Row="1" Grid.Column="1" Text="lock screen" x:Name="lockTile" ImageSource="/images/settings/lock.png" Click="tile_Click" />
+
+                    <TextBlock Text="version number" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Foreground="{StaticResource PhoneAccentBrush}" FontSize="24" FontWeight="Bold" x:Name="txtVersion" Margin="15,10,0,0"></TextBlock>
+
+                </Grid>
+
+            </phone:PanoramaItem>
+
+            <controls:PanoramaItem Orientation="Horizontal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="0" Text="mutes" ImageSource="/images/settings/mutes.png" Click="mutes_Click" />
+                    <userControls:SettingsButton Grid.Row="1" Grid.Column="0" Text="rate limits" ImageSource="/images/settings/User-Time.png" Click="rateLimit_Click" />
+
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="1" Text="start-up" ImageSource="/images/settings/play.png" Click="startup_Click" />
+                    <userControls:SettingsButton Grid.Row="1" Grid.Column="1" Text="save for later" ImageSource="/images/settings/document.png" Click="saveForLater_Click" />
+
+                </Grid>
+
+            </controls:PanoramaItem>
+
+
+            <controls:PanoramaItem Orientation="Horizontal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="0" Text="location"  ImageSource="/images/settings/location.png" Click="location_Click" />
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="1" Text="changes &amp; tips" ImageSource="/images/settings/tips.png" Click="tips_Click" />
+
+                    <userControls:SettingsButton Grid.Row="1" Grid.Column="1" Text="manage cache" ImageSource="/images/settings/clear.png" Click="dataClear_Click" />
+                    <userControls:SettingsButton Grid.Row="1" Grid.Column="0" Text="synchronisation" ImageSource="/images/settings/synchronise.png" Click="synchronise_Click" />
+
+                </Grid>
+
+            </controls:PanoramaItem>
+
+            <controls:PanoramaItem Orientation="Horizontal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <userControls:SettingsButton Grid.Row="0" Grid.Column="1" Text="about" ImageSource="/images/settings/about.png" Click="about_Click" />
+
+                </Grid>
+
+            </controls:PanoramaItem>
+
+
+
+        </controls:Panorama>
+
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</page:AnimatedBasePage>

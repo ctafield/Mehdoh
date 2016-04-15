@@ -1,0 +1,77 @@
+﻿<page:AnimatedBasePage 
+    x:Class="Mitter.UI.Settings.Settings_Background"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:page="clr-namespace:FieldOfTweets.Common.UI.Animations.Page;assembly=FieldOfTweets.Common.UI"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28" Orientation="Horizontal">
+            <Canvas Background="{StaticResource PhoneAccentBrush}" Width="100" Height="100">
+                <Image Height="100" Width="100" Source="/images/settings/background.png"></Image>
+            </Canvas>
+            <TextBlock x:Name="PageTitle" Text="background" Margin="20,0,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+        
+        <!--ContentPanel - place additional content here-->
+        <ScrollViewer x:Name="scrollOptions" Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="1" Margin="0,20,0,0" x:Name="backgroundStack1">
+                    <toolkit:ToggleSwitch x:Name="switchBackground" IsChecked="False" Header="enable background updating" Checked="switchBackground_Checked" Unchecked="switchBackground_Unchecked" Margin="0,0,0,-20"></toolkit:ToggleSwitch>
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="This will run approximately every 30 minutes (this period is set by the Windows Phone OS) and update mentions and direct messages, enabling you to receive toast notifications and live tile updates for them." TextWrapping="Wrap"></TextBlock>
+                    <TextBlock Margin="10" Style="{StaticResource PhoneTextSubtleStyle}" x:Name="txtBgLastStarted" Text="B/G task last started:"></TextBlock>
+                    <TextBlock Margin="10,5,10,10" Style="{StaticResource PhoneTextSubtleStyle}" x:Name="txtBgLastRun" Text="B/G task last completed:"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Margin="0,20,0,0" x:Name="backgroundStack3">
+                    <toolkit:ToggleSwitch Margin="0,0,0,-20" x:Name="switchToast" Header="toast notifications" Checked="switchToast_Checked" Unchecked="switchToast_Checked"></toolkit:ToggleSwitch>
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="Enabling this will show toast notifications when the background task detects new tweets." TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" x:Name="backgroundStack4" Margin="0,20,0,0">
+                    <toolkit:ToggleSwitch x:Name="sleepToggle" Header="quiet time" Checked="sleepToggle_Checked" Unchecked="sleepToggle_Checked"></toolkit:ToggleSwitch>
+                    <StackPanel Orientation="Vertical" Margin="0,-20,0,0" x:Name="stackSleep">
+                        <toolkit:TimePicker x:Name="sleepFrom" Header="don't show toast notifications between:" Value="23:00" ValueChanged="sleepFrom_ValueChanged"></toolkit:TimePicker>
+                        <toolkit:TimePicker x:Name="sleepTo" Header="and..." Value="06:00" ValueChanged="sleepTo_ValueChanged"></toolkit:TimePicker>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Margin="0,20,0,0" x:Name="backgroundStack2">
+                    <toolkit:ToggleSwitch Margin="0,0,0,-20" x:Name="switchWifi" Header="only run background task on wi-fi" Checked="switchWifi_Checked" Unchecked="switchWifi_Checked"></toolkit:ToggleSwitch>
+                    <TextBlock Style="{StaticResource PhoneTextSubtleStyle}" Text="Only run the background task when connected via wi-fi." TextWrapping="Wrap"></TextBlock>
+                </StackPanel>
+
+            </Grid>
+
+        </ScrollViewer>
+
+    </Grid>
+ 
+</page:AnimatedBasePage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.0">
+  <CommandSet xml:lang="en-GB" Name="MyVoiceCommands">
+    <CommandPrefix>mehdoh</CommandPrefix>
+    <Example>new tweet</Example>
+
+    <Command Name="NewTweet">
+      <Example> New Tweet </Example>
+      <ListenFor> [new] tweet </ListenFor>
+      <Feedback>Mehdoh is starting a new tweet</Feedback>
+      <Navigate Target="NewTweet.xaml"/>
+    </Command>
+
+    <Command Name="Compose">
+      <Example> Compose </Example>
+      <ListenFor> compose </ListenFor>
+      <Feedback>Mehdoh is starting a new tweet</Feedback>
+      <Navigate Target="NewTweet.xaml"/>
+    </Command>
+
+    <Command Name="Reply">
+      <Example> Reply </Example>
+      <ListenFor> reply </ListenFor>
+      <Feedback>Mehdoh is replying to the last tweet</Feedback>
+      <Navigate Target="NewTweet.xaml"/>
+    </Command>
+
+    <Command Name="Trends">
+      <Example>Show Trends</Example>
+      <ListenFor> [show] [current] trends</ListenFor>
+      <Feedback>Mehdoh is fetching the current trends</Feedback>
+      <Navigate Target="Trends.xaml"/>
+    </Command>
+
+    <Command Name="WhoToFollow">
+      <Example>Who should I follow?</Example>
+      <ListenFor> who [should] [I] follow</ListenFor>
+      <Feedback>Mehdoh is finding out who to follow</Feedback>
+      <Navigate Target="FollowSuggestions.xaml"/>
+    </Command>
+
+  </CommandSet>
+  
+  <CommandSet xml:lang="en-US" Name="MyVoiceCommands">
+    <CommandPrefix>mehdoh</CommandPrefix>
+    <Example>new tweet</Example>
+
+    <Command Name="NewTweet">
+      <Example> New Tweet </Example>
+      <ListenFor> [new] tweet </ListenFor>
+      <Feedback>Mehdoh is starting a new tweet</Feedback>
+      <Navigate Target="NewTweet.xaml"/>
+    </Command>
+
+    <Command Name="Compose">
+      <Example> Compose </Example>
+      <ListenFor> compose </ListenFor>
+      <Feedback>Mehdoh is starting a new tweet</Feedback>
+      <Navigate Target="NewTweet.xaml"/>
+    </Command>
+
+    <Command Name="Reply">
+      <Example> Reply </Example>
+      <ListenFor> reply </ListenFor>
+      <Feedback>Mehdoh is replying to the last tweet</Feedback>
+      <Navigate Target="NewTweet.xaml"/>
+    </Command>
+
+    <Command Name="Trends">
+      <Example>Show Trends</Example>
+      <ListenFor> [show] [current] trends</ListenFor>
+      <Feedback>Mehdoh is fetching the current trends</Feedback>
+      <Navigate Target="Trends.xaml"/>
+    </Command>
+
+    <Command Name="WhoToFollow">
+      <Example>Who should I follow?</Example>
+      <ListenFor> who [should] [I] follow</ListenFor>
+      <Feedback>Mehdoh is finding out who to follow</Feedback>
+      <Navigate Target="FollowSuggestions.xaml"/>
+    </Command>
+
+  </CommandSet>  
+  
+  
+</VoiceCommands>

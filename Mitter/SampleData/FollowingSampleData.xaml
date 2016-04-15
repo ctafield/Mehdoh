@@ -1,0 +1,11 @@
+﻿<objectModel:ObservableCollection               
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"              
+              xmlns:objectModel="clr-namespace:System.Collections.ObjectModel;assembly=System"
+              xmlns:viewModels="clr-namespace:FieldOfTweets.Common.UI.ViewModels;assembly=FieldOfTweets.Common.UI"
+              x:TypeArguments="viewModels:FriendViewModel">
+
+    <viewModels:FriendViewModel ScreenName="@mrcfield" DisplayName="Chris Field" FollowersCount="602" FriendsCount="2123" />
+    <viewModels:FriendViewModel ScreenName="@mehdoh" DisplayName="Mehdoh" FollowersCount="1521" FriendsCount="3" />
+
+</objectModel:ObservableCollection>

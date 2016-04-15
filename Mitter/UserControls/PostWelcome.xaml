@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Mitter.UserControls.PostWelcome"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Input"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    d:DesignHeight="800" d:DesignWidth="480">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Height="800" Width="480">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="PageTitle" Text="let's get started..." Style="{StaticResource PhoneTextExtraLargeStyle}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="12,0,12,0">
+
+            <TextBlock Margin="5" TextWrapping="Wrap">While Mehdoh fetches some tweets, let's configure a few options quickly.</TextBlock>
+            <TextBlock Margin="5" TextWrapping="Wrap">You can always change these (and others) again later on via Settings.</TextBlock>
+
+            <StackPanel Background="{StaticResource PhoneAccentBrush}" Margin="0,30,0,0">
+                <TextBlock Foreground="White" TextWrapping="Wrap" Margin="5,20">Which image host would you like to use to upload images to?</TextBlock>                                               
+                                
+                <telerik:RadListPicker Margin="0" Foreground="White" x:Name="lstImageHost" SelectionChanged="lstImageHost_SelectionChanged">
+                    <telerik:RadListPickerItem Content="twitter">
+                    </telerik:RadListPickerItem>
+                    <telerik:RadListPickerItem Content="onedrive">
+                    </telerik:RadListPickerItem>
+                    <telerik:RadListPickerItem Content="yfrog">
+                    </telerik:RadListPickerItem>
+                    <telerik:RadListPickerItem Content="twitpic">
+                    </telerik:RadListPickerItem>
+                </telerik:RadListPicker>
+            </StackPanel>
+
+            <StackPanel x:Name="stackBackground" Background="{StaticResource PhoneAccentBrush}" Margin="0,10,0,0">
+                <TextBlock TextWrapping="Wrap" Foreground="White" Margin="5">Would you like Mehdoh to check for mentions and direct messages when the app is not running? (Note: This is required for updating the live tile)</TextBlock>
+                <StackPanel Grid.Row="1" Margin="0">
+                    <toolkit:ToggleSwitch Content="No" SwitchForeground="White" Foreground="White" x:Name="switchBackground" IsChecked="False" Checked="switchBackground_Checked" Unchecked="switchBackground_Unchecked"></toolkit:ToggleSwitch>
+                </StackPanel>
+            </StackPanel>
+
+            <Button Margin="50" x:Name="lnkContinue" Click="lnkContinue_Click">Continue</Button>
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>
